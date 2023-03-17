@@ -1,0 +1,103 @@
+body {
+  background-image: url('wal.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@keyframes animacja-tla {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
+body.animowane-tlo {
+  animation: animacja-tla 10s linear infinite;
+}
+
+.animowane-tlo {
+  animation: animacja-tla 10s linear infinite;
+}
+
+h1, p {
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between 400px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 100px;
+}
+
+.box {
+  max-width: 400px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  flex-basis: calc(33.33% - 20px);
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-bottom: 80px;
+  margin-right: 20px;
+  cursor: pointer;
+  text-align: center;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  float: left;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  transition: height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+  z-index: -1;
+}
+
+.box:hover {
+  transform: scale(1.5);
+}
+
+.box:hover::before {
+  height: 100%;
+}
+
+.box:hover .btn {
+  display: none;
+}
+
+.box:last-child {
+  margin-right: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.czciona p {
+  font-size: 84px;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  font-family: 'Callista', sans-serif;
+}
